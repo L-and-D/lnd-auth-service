@@ -1,0 +1,22 @@
+name: CI/CD
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  pipeline:
+    uses: L-and-D-Management-System/l-and-d-main/.github/workflows/backend.yml@dev
+
+    with:
+      service: "auth-service"
+      image: ghcr.io/l-and-d-management-system/auth-service
+      trigger: ${{ github.event_name }}
+
+    secrets: inherit

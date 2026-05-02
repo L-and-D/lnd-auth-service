@@ -1,0 +1,4 @@
+image: nimeshsv814/ld-auth-service:v1.0.0
+replicas: 1
+port: 3001
+namespace: prod
