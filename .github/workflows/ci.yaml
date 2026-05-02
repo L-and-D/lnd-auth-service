@@ -12,11 +12,11 @@ permissions:
 
 jobs:
   pipeline:
-    uses: L-and-D-Management-System/l-and-d-main/.github/workflows/backend.yml@dev
+    uses: L-and-D/LnD/.github/workflows/backend.yml@main
 
     with:
       service: "auth-service"
-      image: ghcr.io/l-and-d-management-system/auth-service
+      image: ghcr.io/l-and-d/ld-auth-service
       trigger: ${{ github.event_name }}
 
     secrets: inherit
